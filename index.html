@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#fbf6f2">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;700&display=swap">
 <style>
   /* Identidade do livro: creme, listras rosa-pó, terracota e marrom. Tema claro fixo. */
   :root {
@@ -300,13 +300,67 @@
   .social a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--brown); transition: border-color .3s, transform .3s; }
   .social a:hover { border-color: var(--accent); transform: translateY(-2px); }
   .social .ico { width: 20px; height: 20px; }
+
+  /* ---------- Acabamento profissional ---------- */
+  .tint { background: #f7eee9; }
+  .logo { display: inline-flex; align-items: baseline; gap: 10px; }
+  .logo .sig { font-family: Allura, "Brush Script MT", cursive; font-size: 36px; line-height: 1; color: var(--brown); letter-spacing: 0; }
+  .logo small { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: .34em; text-transform: uppercase; color: var(--accent); }
+  .bar { position: sticky; }
+  .progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; }
+  /* Linha da autora no topo */
+  .by { display: flex; align-items: center; gap: 12px; margin-top: 26px; font-size: 13px; line-height: 1.45; color: var(--muted); }
+  .by img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; border: 2px solid var(--paper); box-shadow: 0 4px 12px -4px rgba(107,69,54,.5); }
+  .by b { color: var(--brown); font-weight: 700; }
+  .hero h1 { text-shadow: 0 1px 0 rgba(255,253,251,.6); }
+  /* Fotos do topo sem cortar */
+  .snap.s1 { left: -8%; bottom: 6%; }
+  .snap.s2 { right: -16%; top: 6%; }
+  /* Receita interativa: ilustração como foto impressa */
+  .recipe .art { padding: 34px 30px; background: var(--rose); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; min-height: 0; }
+  .recipe .art img { height: auto; aspect-ratio: 5/4; padding: 9px; background: #fff; box-shadow: 0 22px 40px -22px rgba(107,69,54,.6); transform: rotate(-1.6deg); }
+  .recipe:hover .art img { transform: rotate(0) scale(1.02); }
+  .recipe .tag { position: static; background: transparent; border: 1px solid var(--accent); }
+  /* Autora: foto em arco com moldura deslocada */
+  .author { grid-template-columns: 340px 1fr; gap: 64px; }
+  .portrait { padding: 0 18px 18px 0; }
+  .portrait::after { inset: 18px 0 0 18px; border-radius: 999px 999px 0 0; border: 1px solid var(--accent); animation: none; z-index: 0; }
+  .portrait img { position: relative; z-index: 1; aspect-ratio: 4/5; border-radius: 999px 999px 0 0; border: 0; object-fit: cover; object-position: 50% 25%; }
+  .sign { display: block; font-family: Allura, "Brush Script MT", cursive; font-size: 54px; line-height: 1; color: var(--accent); margin: 2px 0 16px; }
+  /* Como funciona */
+  .howto { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; position: relative; }
+  .howto::before { content: ""; position: absolute; left: 16%; right: 16%; top: 34px; border-top: 1px dashed var(--accent); opacity: .5; }
+  .howto li { position: relative; text-align: center; padding: 0 12px; }
+  .howto .n { display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 20px; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--accent); box-shadow: 0 10px 24px -14px rgba(107,69,54,.5); }
+  .howto h3 { font-size: 26px; margin-bottom: 6px; }
+  .howto p { margin: 0 auto; color: var(--muted); font-size: 15px; max-width: 28ch; }
+  /* Rodapé */
+  .foot { border-top: 1px solid var(--line); background: var(--paper); text-transform: none; letter-spacing: 0; padding-top: 54px; }
+  .foot .wrap { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .fnav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; }
+  .fnav a { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+  .fnav a:hover { color: var(--accent); }
+  .foot .social { margin: 0; }
+  .copy { margin: 0; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+  @media (max-width: 880px) {
+    .logo .sig { font-size: 31px; }
+    .by { justify-content: center; text-align: left; }
+    .snap.s1 { left: -2%; } .snap.s2 { right: -2%; }
+    .recipe .art { padding: 24px 22px; }
+    .author { grid-template-columns: 1fr; gap: 40px; }
+    .portrait { width: 250px; }
+    .howto { grid-template-columns: 1fr; gap: 34px; }
+    .howto::before { display: none; }
+    .howto li { background: transparent; }
+    .howto .n { position: relative; }
+  }
 </style>
 </head>
 <body>
 
 <header class="bar" id="bar">
   <div class="wrap">
-    <a class="logo" href="#topo">Elisandra <em>Receitas</em></a>
+    <a class="logo" href="#topo"><span class="sig">Elisandra</span><small>Receitas</small></a>
     <nav class="menu" aria-label="Principal">
       <a href="#por-dentro">Por dentro</a>
       <a href="#receitas">Receitas</a>
@@ -315,6 +369,7 @@
       <a class="btn sm" href="https://wa.me/5548999917010?text=Oi%2C%20Eli!%20Quero%20saber%20sobre%20o%20livro%20de%20receitas." target="_blank" rel="noopener">Quero o livro</a>
     </nav>
   </div>
+  <i class="progress" id="progress" aria-hidden="true"></i>
 </header>
 
 <main id="topo">
@@ -328,7 +383,7 @@
           <a class="btn" href="https://wa.me/5548999917010?text=Oi%2C%20Eli!%20Quero%20saber%20sobre%20o%20livro%20de%20receitas." target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>Pedir pelo WhatsApp</a>
           <a class="btn ghost" href="#por-dentro">Ver por dentro</a>
         </div>
-        <p class="small">Em PDF. Abre no celular, tablet e computador.</p>
+        <div class="by"><img src="paginas/elisandra-foto.jpg" onerror="this.onerror=null;this.src='paginas/elisandra.jpg'" alt="" width="44" height="44"><span>Por <b>Elisandra Souza</b><br>Livro digital em PDF · celular, tablet e computador</span></div>
       </div>
       <div class="book">
         <figure class="snap s1" aria-hidden="true"><img src="paginas/lanche-ilustracao.jpg" alt=""><figcaption>lanche de pão francês</figcaption></figure>
@@ -374,7 +429,7 @@
     </div>
   </section>
 
-  <section class="sec stripes">
+  <section class="sec tint">
     <div class="wrap">
       <div class="feats rv">
         <div class="feat">
@@ -436,7 +491,7 @@
     </div>
   </section>
 
-  <section class="sec stripes" id="receita">
+  <section class="sec tint" id="receita">
     <div class="wrap">
       <div class="sec-head rv">
         <p class="eyebrow">Experimente</p>
@@ -496,8 +551,24 @@
         <h2>Elisandra Souza</h2>
         <blockquote>“Cozinhar é o meu jeito de cuidar de quem eu amo.”</blockquote>
         <p>Criadora de conteúdo digital, compartilha a vida real aos 50+ e receitas práticas da rotina com mais de 152 mil seguidores no Instagram.</p>
+        <span class="sign" aria-hidden="true">Elisandra</span>
         <a class="ig" href="https://www.instagram.com/elisandra_ssouza/" target="_blank" rel="noopener">@elisandra_ssouza no Instagram →</a>
       </div>
+    </div>
+  </section>
+
+  <section class="sec tint" id="como">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Do pedido à sua cozinha</h2>
+        <svg class="orn" viewBox="0 0 54 10" aria-hidden="true"><path d="M0 5h20M34 5h20" stroke="currentColor"/><circle cx="27" cy="5" r="3" fill="none" stroke="currentColor"/></svg>
+      </div>
+      <ol class="howto">
+        <li class="rv"><span class="n">01</span><h3>Chame no WhatsApp</h3><p>Fale direto com a Elisandra e garanta o seu livro.</p></li>
+        <li class="rv d1"><span class="n">02</span><h3>Receba o PDF</h3><p>O livro chega no seu celular, pronto para abrir.</p></li>
+        <li class="rv d2"><span class="n">03</span><h3>É só cozinhar</h3><p>Use o sumário clicável para achar cada receita em segundos.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -529,7 +600,7 @@
   </section>
 </main>
 
-<footer><div class="social"><a href="https://wa.me/5548999917010?text=Oi%2C%20Eli!%20Quero%20saber%20sobre%20o%20livro%20de%20receitas." target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a><a href="https://www.instagram.com/elisandra_ssouza/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></div>Livro de Receitas · Elisandra Souza · 2026</footer>
+<footer class="foot"><div class="wrap"><a class="logo" href="#topo"><span class="sig">Elisandra</span><small>Receitas</small></a><nav class="fnav" aria-label="Rodapé"><a href="#por-dentro">Por dentro</a><a href="#receitas">Receitas</a><a href="#autora">A autora</a><a href="#duvidas">Dúvidas</a></nav><div class="social"><a href="https://wa.me/5548999917010?text=Oi%2C%20Eli!%20Quero%20saber%20sobre%20o%20livro%20de%20receitas." target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a><a href="https://www.instagram.com/elisandra_ssouza/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></div><p class="copy">© 2026 Elisandra Souza · Livro de Receitas · Todos os direitos reservados</p></div></footer>
 
 <div class="dock" id="dock">
   <div class="t1">Livro de Receitas<small>Lançamento em breve</small></div>
@@ -573,6 +644,8 @@
   function onScroll() {
     var y = w.scrollY;
     bar.classList.toggle('scrolled', y > 8);
+    var mx = d.documentElement.scrollHeight - w.innerHeight;
+    d.getElementById('progress').style.transform = 'scaleX(' + (mx > 0 ? y / mx : 0) + ')';
     dock.classList.toggle('show', y > hero.offsetHeight * .6);
   }
   w.addEventListener('scroll', onScroll, { passive: true }); onScroll();
